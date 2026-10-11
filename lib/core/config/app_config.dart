@@ -5,11 +5,11 @@ class AppConfig {
     'SUPABASE_URL',
     defaultValue: '',
   );
-  static const String supabaseAnonKey = String.fromEnvironment(
-    'SUPABASE_ANON_KEY',
-    defaultValue: '',
+  static const String supabasePublicKey = String.fromEnvironment(
+    'SUPABASE_PUBLISHABLE_KEY',
+    defaultValue: String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: ''),
   );
 
   static bool get isConfigured =>
-      supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
+      supabaseUrl.isNotEmpty && supabasePublicKey.isNotEmpty;
 }

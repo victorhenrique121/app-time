@@ -1,17 +1,35 @@
-# app_time
+# Gestão de Time Society
 
-A new Flutter project.
+Aplicação Flutter multiplataforma para a gestão de um time Society/Fut7/Fut6.
+A primeira entrega prioriza Flutter Web responsivo; a estrutura mantém espaço
+para Android e iOS. O backend planejado é Supabase Auth + PostgreSQL + RLS.
 
-## Getting Started
+## Estado atual
 
-This project is a starting point for a Flutter application.
+- Fase 1: base Flutter, navegação, tema provisório e teste de widget.
+- Fase 2: schema inicial, migrations, políticas RLS e testes SQL; assertions
+  exercitadas em PostgreSQL WASM temporário.
+- A aplicação ainda não inicializa o cliente Supabase nem implementa login.
+- Nenhuma migration foi aplicada a um projeto remoto.
 
-A few resources to get you started if this is your first Flutter project:
+## Executar a aplicação
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Instale o Flutter SDK e execute:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```powershell
+flutter pub get
+flutter run -d chrome
+```
+
+## Banco e Supabase
+
+O modelo, as políticas de acesso, a configuração local, os testes e o
+procedimento para conectar um projeto estão em [supabase/README.md](supabase/README.md).
+Credenciais de exemplo ficam em [.env.example](.env.example); o Flutter não
+carrega esse arquivo automaticamente. Não use credenciais privadas ou
+`service_role` no cliente.
+
+## Documentos do projeto
+
+Os requisitos funcionais, de segurança e identidade visual estão na pasta
+[Requirements/](Requirements/).
